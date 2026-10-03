@@ -1,0 +1,35 @@
+{
+  "selected": "VScode",
+  "PyCharm": {
+    "font": {
+      "name": "DejaVu Sans Mono",
+      "size": 12
+    },
+    "bg": "#2B2D30",
+    "second_bg": "#1e1f22",
+    "syntax": {
+      "keywords": "#f76f1b",
+      "int": "#36adf7",
+      "str": "#448740",
+      "func": "#2976a5",
+      "error": "#c11805",
+      "comment": "#4f5051"
+    }
+  },
+  "VScode": {
+    "font": {
+      "name": "DejaVu Sans Mono",
+      "size": 12
+    },
+    "bg": "#23293d",
+    "second_bg": "#141928",
+    "syntax": {
+      "keywords": "#f76f1b",
+      "int": "#36adf7",
+      "str": "#448740",
+      "func": "#2976a5",
+      "error": "#c11805",
+      "comment": "#4f5051"
+    }
+  }
+}
