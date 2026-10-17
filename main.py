@@ -1,6 +1,6 @@
 import json
 
-from tkinter import ttk, messagebox, Tk
+from tkinter import ttk, Tk
 from tkinter import StringVar, Variable, Listbox
 from tkinter import END
 from Testing.module_tests import check_output
@@ -45,6 +45,7 @@ class MainWindow(Tk):
         def set_difficulty(difficulty: int) -> None:
             self.difficulty = difficulty
             self.current_question = 0
+            self.summary = [None] * 10
             self.add_text()
 
         # Само меню
@@ -76,7 +77,7 @@ class MainWindow(Tk):
                    ).grid(column=0, row=0, pady=10, padx=10)
 
         progress_bar = StylishText(technical_bar,
-                     text=f"{'● ' * 10}\n{"  "*self.current_question}^ {" "*(9-self.current_question)}",
+                     text=f"{'● ' * 10}\n{"  "*self.current_question}^",
                      bg=self.style.bg, style=self.style, height=2, width=20, selection=False)
         def color_progress_bar():
             for i in range(10):
@@ -88,6 +89,7 @@ class MainWindow(Tk):
                     color = "#FFFFFF"
                 progress_bar.color_index(color=color, index1=f"1.{i * 2}",
                                          index2=f"1.{i * 2 + 1}")
+        color_progress_bar()
         progress_bar.grid(column=2, row=0, pady=10, padx=10)
         technical_bar.grid_columnconfigure(1, weight=10)
         technical_bar.pack(fill='x', expand=True, padx=10)
@@ -131,7 +133,6 @@ class MainWindow(Tk):
                 self.summary[self.current_question] = True
                 self.current_question += 1
                 self.add_text()
-                color_progress_bar()
                 InfoWindow(name="Верный ответ!", text="Код работает!")
                 return
 
