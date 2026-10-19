@@ -8,12 +8,13 @@
     "bg": "#2B2D30",
     "second_bg": "#1e1f22",
     "syntax": {
-      "keywords": "#f76f1b",
+      "keyword": "#f76f1b",
       "int": "#36adf7",
       "str": "#448740",
       "func": "#2976a5",
       "error": "#c11805",
-      "comment": "#4f5051"
+      "comment": "#4f5051",
+      "builtin": "#9772d4"
     }
   },
   "VScode": {
@@ -24,12 +25,13 @@
     "bg": "#23293d",
     "second_bg": "#141928",
     "syntax": {
-      "keywords": "#f76f1b",
+      "keyword": "#f76f1b",
       "int": "#36adf7",
       "str": "#448740",
       "func": "#2976a5",
       "error": "#c11805",
-      "comment": "#4f5051"
+      "comment": "#4f5051",
+      "builtin": "#9772d4"
     }
   }
 }

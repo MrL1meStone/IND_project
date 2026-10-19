@@ -106,9 +106,8 @@ class MainWindow(Tk):
                               fg='gray', selection=False)
         numbers.pack(side='left', fill='y')
         numbers.configure(state='normal')
-        for i in range(19):
+        for i in range(20):
             numbers.insert(END, f'{i + 1: ^3}\n')
-        numbers.insert(END, '20 ')
         numbers.configure(state='disabled')
         # --- Полоса нумерации строк --- #
 
@@ -118,6 +117,7 @@ class MainWindow(Tk):
         label.pack(pady=40)
         ide = IDE(code_frame, style=self.style)
         ide.pack(anchor='center', side='left', fill="both")
+        ide.insert("1.0", "\n"*1000)
         # --- Сам редактор кода --- #
 
         code_frame.pack()

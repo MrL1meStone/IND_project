@@ -1,4 +1,4 @@
 def temporary():
-    print(input())
+    print(dict(zip(("id","name","age"), input())))
     
     pass

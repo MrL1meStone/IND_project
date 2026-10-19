@@ -23,7 +23,7 @@ class StylishText(Text):
 
 		super().__init__(widget, height=height, width=width, border=0.0,
 		                 bd=0, highlightthickness=0, bg=bg,
-		                 font=style.font, foreground=fg)
+		                 font=style.font, foreground=fg, insertbackground=style.second_fg)
 
 		self.style = style
 		self.fg = fg
@@ -50,20 +50,3 @@ class StylishText(Text):
 		tag_name = f'{index1}:{index2}'
 		self.tag_add(tag_name, f'{index1}', f'{index2}')
 		self.tag_configure(tag_name, foreground=color)
-
-	def write_text(self, text: str, index: str | None = None, clear: bool = True, color = None) -> None:
-		if not index:
-			index = '1.0'
-		if not color:
-			color = self.fg
-		disabled = self['state']=='disabled'
-		if disabled:
-			self.configure(state='normal')
-		if clear:
-			self.replace(1.0,'end','')
-
-		self.insert(index,text+'\n')
-		line,char = map(int,index.split("."))
-		self.color_index(index,f'{line+len(text.split('\n'))}.{len(text.split('\n')[-1])}',color)
-		if disabled:
-			self.configure(state='disabled')
